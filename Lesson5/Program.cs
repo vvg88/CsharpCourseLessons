@@ -15,30 +15,33 @@ namespace Lesson5
             Sector sec = new Sector(30f, 50f);
             Triangle tri = new Triangle(10f, 20f, 30f);
 
-            Shape[] shapes = new Shape[] { rect, cir, sec, tri };
-            foreach(Shape sh in shapes)
+            //Shape[] shapes = new Shape[] { rect, cir, sec, tri };
+            //foreach(Shape sh in shapes)
+            //{
+            //    Console.WriteLine(sh.Name);
+            //    Console.WriteLine("Радиус: " + (sh as IGetableRadius)?.GetRadius());
+            //    Console.WriteLine(sh.GetArea());
+            //    Console.WriteLine(sh.GetPerimeter() + "\n");
+            //}
+            //IReadOnlyList
+
+            List<Shape> shps = new List<Shape>(new Shape[] {
+                new Rectangle(10.5f, 50),
+                new Circle(50f),
+                new Sector(30f, 50f),
+                new Triangle(10f, 20f, 30f)
+            });
+
+            IEnumerator<Shape> enumerator = shps.GetEnumerator();
+            Shape shp;
+            while (enumerator.MoveNext())
             {
-                Console.WriteLine(sh.GetName());
-                Console.WriteLine(sh.GetArea());
-                Console.WriteLine(sh.GetPerimeter() + "\n");
+                shp = enumerator.Current;
+                Console.WriteLine(shp.Name);
+                Console.WriteLine("Радиус: " + (shp as IGetableRadius)?.GetRadius());
+                Console.WriteLine(shp.GetArea());
+                Console.WriteLine(shp.GetPerimeter() + "\n");
             }
-            
-            //Console.WriteLine(rect.GetName());
-            //Console.WriteLine(rect.GetArea());
-            //Console.WriteLine(rect.GetPerimeter() + "\n");
-
-            //Console.WriteLine(cir.GetName());
-            //Console.WriteLine(cir.GetArea());
-            //Console.WriteLine(cir.GetPerimeter() + "\n");
-
-            //Console.WriteLine(sec.GetName());
-            //Console.WriteLine(sec.GetArea());
-            //Console.WriteLine(sec.GetPerimeter() + "\n");
-
-            //Console.WriteLine(tri.GetName());
-            //Console.WriteLine(tri.GetArea());
-            //Console.WriteLine(tri.GetPerimeter() + "\n");
-
             Console.ReadLine();
         }
         // Структура записывается в поле класса - boxing

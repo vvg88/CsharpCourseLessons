@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace Lesson5
 {
-    class Shape
+    abstract class Shape
     {
-        public virtual string GetName()
+        public abstract string Name
         {
-            return "Фигура";
+            get;
         }
 
-        public virtual float GetArea()
-        {
-            return 0;
-        }
+        public abstract float GetArea();
 
-        public virtual float GetPerimeter()
-        {
-            return 0;
-        }
+        public abstract float GetPerimeter();
     }
 }

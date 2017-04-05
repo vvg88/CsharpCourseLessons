@@ -19,9 +19,9 @@ namespace Lesson5
             this.sideC = sideC;
         }
 
-        public override string GetName()
+        public override string Name
         {
-            return "Треугольник";
+            get { return "Треугольник"; }
         }
 
         public override float GetArea()

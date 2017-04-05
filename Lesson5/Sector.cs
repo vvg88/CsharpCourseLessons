@@ -1,35 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson5
+﻿namespace Lesson5
 {
-    class Sector : Shape
+    class Sector : Circle, IGetableRadius
     {
-        private float rad;
         private float angleGrad;
 
-        public Sector (float rad, float angleGrad)
+        public Sector (float rad, float angleGrad) : base(rad)
         {
-            this.rad = rad;
             this.angleGrad = angleGrad;
         }
 
-        public override string GetName()
+        public override string Name
         {
-            return "Сектор";
+            get { return "Сектор"; }
         }
 
         public override float GetArea()
         {
-            return (float)Math.PI * angleGrad * rad * rad / 2 / 360;
+            return base.GetArea() * angleGrad / 2 / 360;
         }
 
         public override float GetPerimeter()
         {
-            return 2 * rad + angleGrad * rad * (float)Math.PI / 180;
+            return 2 * radius + base.GetPerimeter() * angleGrad  / 360;
         }
     }
 }

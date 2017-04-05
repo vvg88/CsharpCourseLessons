@@ -17,9 +17,9 @@ namespace Lesson5
             this.length = length;
         }
 
-        public override string GetName()
+        public override string Name
         {
-            return "Прямоугольник";
+            get { return "Прямоугольник"; }
         }
 
         public override float GetArea()
