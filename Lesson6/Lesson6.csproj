@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SumMatrixException.cs" />
+    <Compile Include="ToeplitzMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
