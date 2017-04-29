@@ -36,14 +36,14 @@ namespace BankApp.BusinessLogic
             Open();
         }
 
-        public void PullMoney(decimal value)
+        public void DecreaseMoney(decimal value)
         {
             if (Balance < value)
                 throw new Exception("Недостаточно средств на счете!");
             Balance -= value;
         }
 
-        public void PushMoney(decimal money)
+        public void IncreaseMoney(decimal money)
         {
             Balance += money;
         }

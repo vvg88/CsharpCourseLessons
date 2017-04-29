@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\Person.cs" />
+    <Compile Include="BusinessLogic\MoneyOperation.cs" />
+    <Compile Include="BusinessLogic\PullOperation.cs" />
+    <Compile Include="BusinessLogic\PushOperation.cs" />
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,12 +77,17 @@
     <Compile Include="BusinessLogic\Employee.cs" />
     <Compile Include="BusinessLogic\Operation.cs" />
     <Compile Include="BusinessLogic\OperationsTypes.cs" />
+    <Compile Include="BusinessLogic\CloseOperation.cs" />
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\OpenOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

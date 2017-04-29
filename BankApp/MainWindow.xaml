@@ -5,17 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        <!--<StackPanel>
-            <Button Content="button 1"/>
-            <Button Content="button 2"/>
-            <TextBox Text="Hello World!"/>
-        </StackPanel>-->
-        <WrapPanel>
-            <Button Content="button 1" Margin="5"/>
-            <Button Content="button 2" Margin="5"/>
-            <TextBox Text="Hello World!" Margin="5"/>
-        </WrapPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBox Name="tbFilterClientName" Height="30" HorizontalAlignment="Center" TextChanged="tbFilterClientName_TextChanged"/>
+            <ListBox Name="lbClients" SelectionChanged="lbClients_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBox Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Button Name="btnAddAccount" Content="Добавить" Height="50" FontSize="20" Click="btnAddAccount_Click"/>
+            <Button Name="btnRemoveAccount" Content="Удалить" Height="50" FontSize="20" Click="btnRemoveAccount_Click"/>
+            <ListBox Name="lbAccounts"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBox Name="tbDeltaMoney" Height="50" FontSize="20"/>
+            <Button Name="btnPushMoney" Content="Положить" Height="50" FontSize="20" Click="btnPushMoney_Click"/>
+            <Button Name="btnPullMoney" Content="Снять" Height="50" FontSize="20" Click="btnPullMoney_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

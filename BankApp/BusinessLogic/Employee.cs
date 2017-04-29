@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace BankApp.BusinessLogic
 {
-    public class Employee
+    public class Employee : Person
     {
         public bool IsSignedIn { get; private set; }
 
-        public int Number { get; private set; }
-
-        public string Name { get; private set; }
-
         public string Password { get; private set; }
 
-        public List<OperationsTypes> AllowedOperatinType { get; } = new List<OperationsTypes>();
+        public OperationsTypes AllowedOperatinType { get; }
 
         public Employee(int number, string name, string passwrd, OperationsTypes allowedOpTypes)
+            : base(number, name)
         {
-            Number = number;
             Password = passwrd;
-            Name = name;
+            AllowedOperatinType = allowedOpTypes;
         }
 
         public void SignIn()
